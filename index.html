@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Simple Chat</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<div id="loginModal" class="login-modal">
+		<form id="loginForm" class="login-form">
+			<h2>Login to Chat</h2>
+			<label for="loginIdInput">Login ID</label>
+			<input id="loginIdInput" maxlength="32" placeholder="Enter unique login ID" required />
+			<label for="loginNameInput">Username</label>
+			<input id="loginNameInput" maxlength="40" placeholder="Enter your username" required />
+			<button type="submit">Enter Chat</button>
+		</form>
+	</div>
+	<div id="app" class="container" style="display:none">
+		<aside class="sidebar">
+			<div class="brand">Loop Talk</div>
+			<div class="user-area">
+				<label>Display name</label>
+				<input id="nameInput" placeholder="Your name" />
+			</div>
+			<div class="users-list">
+				<h4>Online</h4>
+				<ul id="users"></ul>
+			</div>
+		</aside>
+		<main class="main">
+			<div id="messages" class="messages"></div>
+			<div class="typing" id="typing"></div>
+			<form id="sendForm" class="composer">
+				<input id="msgInput" autocomplete="off" placeholder="Type a message and press Enter" />
+				<button type="submit">Send</button>
+			</form>
+		</main>
+	</div>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="chat.js"></script>
+</body>
+</html>
